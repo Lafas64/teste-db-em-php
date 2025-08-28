@@ -1,0 +1,526 @@
+:root {
+  --cor-roxo-escuro: #4b2a7a;
+  --cor-roxo-claro: #f3e8ff;
+  --cor-roxo-medio: #a262a8;
+  --cor-roxo-hover: #5936a2;
+  --cor-texto: #333;
+  --cor-fundo: #f7f9fc;
+  --cor-branco: #fff;
+}
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fc;
+            color: #333;
+            padding-top: 70px; /* Espaço para header fixo */
+        }
+
+        /* Cabeçalho fixo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 9999;
+}
+
+/* Padronização das labels */
+label {
+    display: inline-block;
+    font-weight: 600;
+    color: #4b2a7a;             /* roxo escuro */
+    background-color: #f3e8ff;  /* lilás clarinho */
+    padding: 6px 12px;
+    border: 2px solid #a262a8;  /* borda roxa */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Efeito hover nas labels (opcional) */
+label:hover {
+    background-color: #d9b3ff;
+    border-color: #7e3eb0;
+    color: #381e66;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* Inputs com texto alinhado à esquerda */
+form input[type="text"],
+form input[type="file"],
+form input[type="submit"],
+form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Botões roxos com hover */
+form button,
+form input[type="submit"],
+form button {
+  background-color: var(--cor-roxo-medio);
+  color: white;
+  border: none;
+  padding: 24px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  background-color: var(--cor-roxo-hover);
+  transform: translateY(-2px);
+}
+
+/* Div para os botões */
+.botao {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Tabela estilizada */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #a262a8ff;
+    color: white;
+}
+
+/* Resultados busca rápida */
+#resultadoBusca table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#resultadoBusca th, #resultadoBusca td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+#resultadoBusca th {
+    background-color: #a262a8ff;
+    color: white;
+}
+
+#resultadoBusca tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Centraliza títulos e parágrafos */
+h2, p {
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+  header {
+    padding: 10px 15px;
+    font-size: 24px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .menu-toggle img.menu-icon {
+    height: 20px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding-top: 90px;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form button,
+    form input[type="submit"] {
+        max-width: 100%;
+    }
+
+    .botao {
+        flex-direction: column;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    td, th {
+        background-color: var(--cor-branco);
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+
+    th {
+        background-color: transparent;
+        font-weight: bold;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f9fc;
+    color: #333;
+    padding-top: 70px; /* Espaço para header fixo */
+}
+
+/* Cabeçalho fixo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    padding: 15px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* espaço entre título e menu */
+}
+
+.info {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: var(--cor-roxo-claro);
+  border: 2px solid var(--cor-roxo-medio);
+  border-radius: 8px;
+  padding: 0 15px;
+  color: var(--cor-roxo-escuro);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.info.show {
+  padding: 15px 20px;
+  max-height: 300px; /* ou valor que suporte seu conteúdo */
+}
+/* Padronização das labels */
+label {
+    display: inline-block;
+    font-weight: 600;
+    color: #4b2a7a;             /* roxo escuro */
+    background-color: #f3e8ff;  /* lilás clarinho */
+    padding: 6px 12px;
+    border: 2px solid #a262a8;  /* borda roxa */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Efeito hover nas labels (opcional) */
+label:hover {
+    background-color: #d9b3ff;
+    border-color: #7e3eb0;
+    color: #381e66;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* Inputs com texto alinhado à esquerda */
+form input[type="text"],
+form input[type="file"],
+form input[type="submit"],
+form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Botões roxos com hover */
+form button,
+form input[type="submit"] {
+    background-color: #a262a8ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    max-width: 400px;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #5936a2;
+}
+
+/* Div para os botões */
+.botao {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Tabela estilizada */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #a262a8ff;
+    color: white;
+}
+
+/* Resultados busca rápida */
+#resultadoBusca table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#resultadoBusca th, #resultadoBusca td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+#resultadoBusca th {
+    background-color: #a262a8ff;
+    color: white;
+}
+
+#resultadoBusca tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Centraliza títulos e parágrafos */
+h2, p {
+    text-align: center;
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding-top: 90px;
+    }
+
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form button,
+    form input[type="submit"] {
+        max-width: 100%;
+    }
+
+    .botao {
+        flex-direction: column;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        background-color: transparent;
+        font-weight: bold;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 10000;
+    min-width: 220px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 10px 0;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu li {
+    padding: 12px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f3e8ff;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #4b2a7a;
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+/* Animação suave ao aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+  form {
+    padding: 1rem;
+  }
+
+  header {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .botao {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
